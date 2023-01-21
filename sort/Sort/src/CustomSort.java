@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
+
 // class for sort
 public class CustomSort {
 //    Quick sort
@@ -98,16 +99,43 @@ public class CustomSort {
 
     }
 //    Bubble sort
-    public static void bubbleSort(int[] arr, int left, int right) {
-
+//    1. swapped: if it needs swap in the iterate, if false means array finishes sort.
+    public static void bubbleSort(int[] arr) {
+        boolean swapped;
+        for (int i = 0; i < arr.length; i++) {
+            swapped = false;
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    swap(arr, j, j + 1);
+                    swapped = true;
+                }
+            }
+            if (!swapped) {
+                break;
+            }
+        }
     }
 //    Insertion sort
-    public static void insertionSort(int[] arr, int left, int right) {
-
+//    1. use nest for loop: 1st decide insert interval, 2nd for insert
+    public static void insertionSort(int[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            for (int j = i; j > 0 && arr[j-1] > arr[j]; j--) {
+                swap(arr, j-1, j);
+            }
+        }
     }
 //    Selection sort
-    public static void selectionSort(int[] arr, int left, int right) {
-
+//    1. min: the index of the smallest element in the interval
+    public static void selectionSort(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[min]) {
+                    min = j;
+                }
+            }
+            swap(arr, i, min);
+        }
     }
 
     public static void printArr(int[] arr){
@@ -118,6 +146,9 @@ public class CustomSort {
 
     }
 
-
-
+    public static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
 }

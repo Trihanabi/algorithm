@@ -11,7 +11,7 @@ public class SortTest {
         printArr(arr);
 
         arr = new int[]{5, 4, 2, 7, 6, 8, 1, 1, -8};
-        System.out.println("Merge sort: ");
+        System.out.println("\nMerge sort: ");
         System.out.println("Array before sort: ");
         printArr(arr);
         int[] aux = new int[arr.length];
@@ -23,39 +23,41 @@ public class SortTest {
 
         // for big numbers, bucket sort is More effective
         arr = new int[]{5, 4, 2, 7, 6, 8, 1, 1, 8};
-        System.out.println("Bucket sort: ");
+        System.out.println("\nBucket sort: ");
         System.out.println("Array before sort: ");
         printArr(arr);
         CustomSort.bucketSort(arr, 10 );
         System.out.println("Array after sort: ");
         printArr(arr);
 
-        /*
+
 
         arr = new int[]{5, 4, 2, 7, 6, 8, 1, 1, -8};
-        System.out.println("Insertion sort: ");
+        System.out.println("\nInsertion sort: ");
         System.out.println("Array before sort: ");
         printArr(arr);
-        CustomSort.insertionSort(arr, 0, arr.length-1);
+        CustomSort.insertionSort(arr);
         System.out.println("Array after sort: ");
         printArr(arr);
 
+
         arr = new int[]{5, 4, 2, 7, 6, 8, 1, 1, -8};
-        System.out.println("Selection sort: ");
+        System.out.println("\nSelection sort: ");
         System.out.println("Array before sort: ");
         printArr(arr);
-        CustomSort.selectionSort(arr, 0, arr.length-1);
+        CustomSort.selectionSort(arr);
         System.out.println("Array after sort: ");
         printArr(arr);
 
+
         arr = new int[]{5, 4, 2, 7, 6, 8, 1, 1, -8};
-        System.out.println("Bubble sort: ");
+        System.out.println("\nBubble sort: ");
         System.out.println("Array before sort: ");
         printArr(arr);
-        CustomSort.bubbleSort(arr, 0, arr.length-1);
+        CustomSort.bubbleSort(arr);
         System.out.println("Array after sort: ");
         printArr(arr);
-    */
+
 
     }
 
